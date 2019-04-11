@@ -549,7 +549,7 @@ func (l *Lllnumeric) Load(raw []byte, encoder, lenEncoder, length int) (read int
 		fallthrough
 	case BCD:
 		read = 2
-		contentLen, err = strconv.Atoi(string(bcdr2Ascii(raw[:read], 2)))
+		contentLen, err = strconv.Atoi(string(bcdr2Ascii(raw[:read], 3)))
 		if err != nil {
 			return 0, errors.New(ERR_PARSE_LENGTH_FAILED + ": " + string(raw[:2]))
 		}
